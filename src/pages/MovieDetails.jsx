@@ -7,6 +7,7 @@ import { timeFormat } from '../libraries/TimeFormate';
 import { CiHeart } from 'react-icons/ci';
 import DateSelect from '../components/DateSelect';
 import MovieCard from '../components/MovieCard';
+import Loading from '../components/Loading';
 
 const MovieDetails = () => {
     const { id } = useParams();
@@ -16,10 +17,13 @@ const MovieDetails = () => {
     const getShow = async () => {
 
         const show = dummyShowsData.find((show) => show._id == id);
-        setShow({
+        if(show){
+             setShow({
             movie: show,
             dateTime: dummyDateTimeData,
         });
+        }
+       
     }
 
     useEffect(() => {
@@ -314,9 +318,7 @@ const MovieDetails = () => {
 
 
         </div>
-    ) : (
-        <div>Loading...</div>
-    );
+    ) : <Loading></Loading>
 };
 
 export default MovieDetails;
