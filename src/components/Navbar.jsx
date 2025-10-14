@@ -20,9 +20,10 @@ const Navbar = () => {
   
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Contact", path: "/contact" },
+    { name: "Movies", path: "/movies" },
+    { name: "Theaters", path: "/theaters" },
+    { name: "Releases", path: "/releases" },
+    { name: "Favourites", path: "/favourites" },
   ];
 
   return (
@@ -69,7 +70,7 @@ const Navbar = () => {
 
         {
           user? 
-             <Link onClick={handleLogOut}  className="flex  items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full  hover:bg-green-500 transition">
+             <Link onClick={handleLogOut}  className="flex  items-center gap-2 border-2 border-red-500 text-white px-4 py-2 rounded-full  hover:bg-red-500 transition duration-300">
                 <IoLogOutOutline  className="text-xl" /> Logout
               </Link>
           
@@ -77,10 +78,10 @@ const Navbar = () => {
           
           <>
           
-           <Link to='/login' className="flex items-center gap-2 bg-red-400 text-gray-900 px-4 py-2 rounded-full font-semibold hover:bg-red-500 transition">
+           <Link to='/login' className="flex items-center gap-2 bg-red-500 text-gray-900 px-4 py-2 rounded-full font-semibold hover:bg-red-600 transition">
                 <FaUser /> Login
               </Link>
-            <Link to='/register' className="flex items-center gap-2 bg-red-400 text-gray-900 px-4 py-2 rounded-full font-semibold hover:bg-red-500 transition">
+            <Link to='/register' className="flex items-center gap-2 bg-red-500 text-gray-900 px-4 py-2 rounded-full font-semibold hover:bg-red-600 transition">
                 <FaUser /> Register
               </Link>
           </>

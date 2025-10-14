@@ -15,8 +15,8 @@ const MovieCard = ({ movie }) => {
                 className="relative overflow-hidden cursor-pointer group"
             >
                 <img
-                    src={movie.backdrop_path} 
-                    alt={movie.title}
+                    src={movie?.backdrop_path} 
+                    alt={movie?.title} 
                     className='w-full h-48 sm:h-52 md:h-56 lg:h-60 object-cover object-center group-hover:scale-105 transition-transform duration-500'
                 />
             </div>
@@ -28,19 +28,19 @@ const MovieCard = ({ movie }) => {
                     onClick={() => navigate(`/movies/${movie._id}`)}
                     className='font-bold text-white text-lg sm:text-xl mb-2 line-clamp-2 hover:text-red-400 transition-colors duration-200 cursor-pointer'
                 >
-                    {movie.title}
+                    {movie?.title}
                 </h3>
 
                 {/* Movie Details */}
                 <div className='text-gray-300 text-sm sm:text-base mb-3 space-y-1'>
                     <p className="flex flex-wrap items-center gap-1">
-                        <span>{new Date(movie.release_date).getFullYear()}</span>
+                        <span>{new Date(movie?.release_date).getFullYear()}</span>
                         <span className="text-red-500">•</span>
                         <span className="line-clamp-1">
-                            {movie.genres.slice(0, 2).map(genre => genre.name).join(" | ")}
+                            {movie?.genres.slice(0, 2).map(genre => genre.name).join(" | ")}
                         </span>
                         <span className="text-red-500">•</span>
-                        <span>{timeFormat(movie.runtime)}</span>
+                        <span>{timeFormat(movie?.runtime)}</span>
                     </p>
                 </div>
 
@@ -58,7 +58,7 @@ const MovieCard = ({ movie }) => {
                     <div className='flex items-center gap-1.5 text-gray-300'>
                         <CiStar className='w-5 h-5 text-red-500 fill-red-500' />
                         <span className='font-semibold text-white text-sm sm:text-base'>
-                            {movie.vote_average.toFixed(1)}
+                            {movie?.vote_average.toFixed(1)}
                         </span>
                     </div>
                 </div>
