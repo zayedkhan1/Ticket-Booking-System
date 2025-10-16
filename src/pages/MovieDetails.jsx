@@ -12,7 +12,11 @@ import Loading from '../components/Loading';
 const MovieDetails = () => {
     const { id } = useParams();
     const [show, setShow] = useState(null);
+    
     const navigate = useNavigate();
+
+
+  
 
     const getShow = async () => {
 

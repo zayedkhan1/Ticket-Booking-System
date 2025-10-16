@@ -29,7 +29,7 @@ const SocialLogin = () => {
       <button
       onClick={handleGoogleSignIn}
         type="button"
-        className="w-full flex items-center justify-center gap-3 border border-gray-300 bg-lime-500 text-white font-semibold py-3 rounded-xl shadow-md hover:shadow-lg hover:bg-lime-600 transition duration-300 ease-in-out"
+        className="w-full flex items-center justify-center gap-3 border border-gray-300 bg-red-600 text-white font-semibold py-3 rounded-xl shadow-md hover:shadow-lg hover:bg-red-600 transition duration-300 ease-in-out"
       >
         <FcGoogle className="text-2xl" />
         <span className="text-base">Continue with Google</span>

@@ -21,9 +21,8 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Movies", path: "/movies" },
-    { name: "Theaters", path: "/theaters" },
-    { name: "Releases", path: "/releases" },
     { name: "Favourites", path: "/favourites" },
+    { name: "Admin Dashboard", path: "/admin" },
   ];
 
   return (

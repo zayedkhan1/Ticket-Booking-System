@@ -1,19 +1,21 @@
 
-import React, { useState } from 'react';
-import { dummyShowsData } from '../assets/assets';
+import React, {  useState } from 'react';
+// import { dummyShowsData } from '../assets/assets';
 import MovieCard from '../components/MovieCard';
 import BlurCircle from '../components/BlurCircle';
 import { FaFilter, FaSort, FaSearch, FaFire, FaFilm } from 'react-icons/fa';
+import { dummyShowsData } from '../assets/assets';
 
 const Movies = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [sortBy, setSortBy] = useState('latest');
     const [selectedGenre, setSelectedGenre] = useState('all');
-
+   
     // Extract unique genres
     const genres = ['all', ...new Set(dummyShowsData.flatMap(movie => 
         movie.genres?.map(genre => genre.name) || []
     ))];
+    console.error(dummyShowsData)
 
     // Filter and sort movies
     const filteredMovies = dummyShowsData

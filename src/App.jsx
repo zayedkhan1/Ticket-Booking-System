@@ -16,6 +16,7 @@ import Dashboard from './pages/Admin/Dashboard';
 import AddShows from './pages/Admin/AddShows';
 import ListShows from './pages/Admin/ListShows';
 import ListBookings from './pages/Admin/ListBookings';
+import PrivateRoute from './pages/PrivateRoute';
 
 const App = () => {
 
@@ -33,13 +34,15 @@ const App = () => {
     {!hideNavFooterRoutes && <Navbar></Navbar>}
      <Routes>
        <Route path='/' element={<Home></Home>} ></Route>
-       <Route path='/movies' element={<Movies></Movies>} ></Route>
+       <Route path='/movies' element={<PrivateRoute><Movies></Movies> </PrivateRoute>  } ></Route>
        <Route path='movies/:id' element={<MovieDetails></MovieDetails>} ></Route>
        <Route path='/movies/:id/:date' element={<SeatLayout></SeatLayout>} ></Route>
        <Route path='/my-bookings' element={<MyBookings></MyBookings>} ></Route>
-       <Route path='/favourites' element={<Favourite></Favourite>} ></Route>
+       <Route path='/favourites' element={<PrivateRoute> <Favourite></Favourite></PrivateRoute> } ></Route>
        <Route path='/login' element={<Login></Login>} ></Route>
        <Route path='/register' element={<Register></Register>} ></Route>
+       <Route path='/admin' element={ <PrivateRoute> <Dashboard /></PrivateRoute>} />
+
        <Route path='/admin/*' element={<Layout></Layout>}>
           <Route index element={<Dashboard></Dashboard>}  ></Route>
           <Route path='add-shows' element={<AddShows></AddShows>}></Route>
