@@ -31,30 +31,7 @@ const MovieDetails = () => {
     }, [id]);
     return show ? (
         <div>
-            {/* <div className='flex flex-col md:flex-row gap-8 max-w-6xl mx-auto'>
-                <img src={show.movie?.poster_path} alt="" />
-            
-              <div className='relative flex flex-col gap-3'>
-                <BlurCircle top='-100px' left='-100px'></BlurCircle>
-                <p>ENGLISH</p>
-                <h1>{show.movie?.title}</h1>
-                 <div>
-                      <FaStar className='w-5 h-5 text-red-500 fill-red-500'></FaStar>
-                     {show.movie?.vote_average.toFixed(1)} User Rating
-                 </div>
-                 <p> {show.movie?.overview} </p>
-                 <p>
-                    {timeFormat(show.movie?.runtime)} . {show.movie?.genres.map(genre=> genre?.name).join(",")} {show.moive?.release_date.split("-")[0]}
-                 </p>
-                 <div>
-                    <button>
-                        <FaPlayCircle></FaPlayCircle>
-                        Watch Trailer</button>
-                    <a href="">Buy Tickets</a>
-                    <button> <CiHeart></CiHeart> </button>
-                 </div>
-              </div>
-             </div> */}
+     
 
             <div className="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-black py-12 lg:py-20 overflow-hidden">
                 {/* Background Elements */}
@@ -258,16 +235,6 @@ const MovieDetails = () => {
                 <DateSelect dateTime={show.dateTime} id={id}></DateSelect>
 
 
-                {/* <p>You may also like</p>
-<div className='flex flex-wrap max-sm:justify-center gap-8'>
- {dummyShowsData.slice(0,4).map((movie,index)=>(
-    <MovieCard key={index} movie={movie}></MovieCard>
- ))}
-</div>
-<div>
-    <button onClick={()=>navigate('/movies')}>Show more</button>
-</div> */}
-
             </div>
 <div className="relative py-16 lg:py-24 bg-gradient-to-b from-gray-900 to-black overflow-hidden">
     {/* Background Elements */}
@@ -314,8 +281,6 @@ const MovieDetails = () => {
     {/* Bottom Gradient */}
     <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
 </div>
-
-
 
         </div>
     ) : <Loading></Loading>
